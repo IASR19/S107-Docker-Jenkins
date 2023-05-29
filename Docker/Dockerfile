@@ -6,6 +6,7 @@ USER root
 
 # Executa comandos para instalar o npm
 RUN apt-get update
+RUN apt-get install nodejs
 RUN apt-get install -y npm
 
 # Limpa arquivos baixados com apt-get

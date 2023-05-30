@@ -8,6 +8,7 @@ pipeline {
                 echo 'Testing'
                 sh '''
                     npm install --save-dev coverage
+                    npm audit fix
                     npm test
                    '''
                    archiveArtifacts 'coverage/lcov-report'

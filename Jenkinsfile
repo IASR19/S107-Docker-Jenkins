@@ -8,6 +8,8 @@ pipeline {
                 echo 'Testing'
                 sh '''
                     npm install --save-dev coverage
+                    node --version
+                    npm --version
                     npm audit fix
                     npm test
                    '''

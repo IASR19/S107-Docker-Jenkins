@@ -7,6 +7,7 @@ pipeline {
             steps {
                 echo 'Testing'
                 sh '''
+                    npm install --save-dev coverage
                     npm test
                    '''
                    archiveArtifacts 'coverage/lcov-report'

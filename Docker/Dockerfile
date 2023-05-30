@@ -6,8 +6,9 @@ USER root
 
 # Executa comandos para instalar o npm
 RUN apt-get update
-RUN sudo apt-get install curl
+RUN apt-get install curl
 RUN curl -sL https://deb.nodesource.com/setup_14.x
+RUN apt-get install -y nodejs
 RUN apt-get install -y npm
 
 # Limpa arquivos baixados com apt-get

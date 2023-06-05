@@ -7,6 +7,8 @@ pipeline {
             steps {
                 echo 'Testing'
                 sh '''
+                    node --version
+                    npm --version
                     npm install --save-dev coverage
                     node --version
                     npm --version

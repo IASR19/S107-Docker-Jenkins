@@ -9,7 +9,7 @@ jest-html-reporters-attach/
 
 # Coverage reports
 *.coverage
-
+*.report.html
 # Log file
 *.log
 

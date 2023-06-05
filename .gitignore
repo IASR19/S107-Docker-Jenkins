@@ -1,7 +1,13 @@
 # Compiled class file
 *.class
-*.node_modules
-*.jest-html-reporters-attach
+
+# Node modules
+node_modules/
+
+# jest-html-reporters-attach
+jest-html-reporters-attach/
+
+# Coverage reports
 *.coverage
 
 # Log file
@@ -22,8 +28,9 @@
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# Virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
 
-*.idea/
+# IntelliJ IDEA
+.idea/

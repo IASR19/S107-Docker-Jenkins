@@ -9,13 +9,13 @@ pipeline {
                 sh '''
                     node --version
                     npm --version
-                    npm install --save-dev coverage
+                    npm install --save-dev jest jest-html-reporters     
                     node --version
                     npm --version
                     npm audit fix
-                    npm test
+                    npx jest --config=jest.config.js
                    '''
-                   archiveArtifacts 'coverage/lcov-report'
+                   archiveArtifacts 'report'
             }
 
         }

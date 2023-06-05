@@ -1,7 +1,7 @@
 # Compiled class file
 *.class
 *.node_modules
-*jest-html-reporters-attach
+*.jest-html-reporters-attach
 *.coverage
 
 # Log file

@@ -15,7 +15,7 @@ pipeline {
                     npm audit fix
                     npx jest --config=jest.config.js
                    '''
-                   archiveArtifacts 'report'
+                   archiveArtifacts 'report.html'
             }
 
         }

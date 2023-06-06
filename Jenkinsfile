@@ -5,7 +5,7 @@ pipeline {
         stage ('Set Environment Variable') {
             steps {
                 script {
-                    env.EMAIL = 'itamar.asr@gmail.com'
+                    env.EMAIL = 'itamar.asr19@gmail.com'
                 }
             }
         }

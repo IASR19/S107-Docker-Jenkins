@@ -1,0 +1,1 @@
+echo "Pipeline executado!" | mail -s "meu email deu tudo certo" $EMAIL

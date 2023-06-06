@@ -5,7 +5,7 @@ pipeline {
         stage ('Set Environment Variable') {
             steps {
                 script {
-                    env.EMAIL = 'itamar.asr19@gmail.com'
+                    env.EMAIL = 'itamar.asr@gmail.com'
                 }
             }
         }
@@ -29,12 +29,13 @@ pipeline {
         stage ('Notifications') {
             steps {
                 echo 'Notifications'
-                sh '''
-                    echo $EMAIL
-                    cd scripts/
-                    chmod 777 *
-                    ./jenkins.sh
-                '''
+                emailext (
+                    subject: 'Pipeline Executado!',
+                    body: 'Build completed. Please check the status.',
+                    to: env.EMAIL,
+                    from: 'seu-email@example.com',
+                    mimeType: 'text/html'
+                )
             }
         }
     }

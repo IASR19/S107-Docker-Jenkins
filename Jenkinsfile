@@ -2,8 +2,15 @@ pipeline {
     agent any
 
     stages {
+        stage ('Set Environment Variable') {
+            steps {
+                script {
+                    env.EMAIL = 'itamar.asr19@gmail.com'
+                }
+            }
+        }
 
-        stage ('Test'){
+        stage ('Test') {
             steps {
                 echo 'Testing'
                 sh '''
@@ -14,22 +21,21 @@ pipeline {
                     npm --version
                     npm audit fix
                     npx jest --config=jest.config.js
-                   '''
-                   archiveArtifacts 'report.html'
+                '''
+                archiveArtifacts 'report.html'
             }
-
         }
 
-        stage ('Notifications'){
+        stage ('Notifications') {
             steps {
                 echo 'Notifications'
                 sh '''
+                    echo $EMAIL
                     cd scripts/
                     chmod 777 *
                     ./jenkins.sh
-                   '''
+                '''
             }
-            
         }
     }
 }

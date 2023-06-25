@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  jenkins_node:
+    image: igsr19/s107-pv2:v1.0
+    container_name: jenkins
+    privileged: true
+    user: root
+    ports:
+      - 8080:8080
+      - 50000:50000
+    volumes:
+      - ./jenkins_compose/jenkins_configuration:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: myapp
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+
+  frontend:
+    image: nginx:latest
+    container_name: frontend
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - ./frontend:/usr/share/nginx/html

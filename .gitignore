@@ -3,6 +3,9 @@
 
 # Node modules
 node_modules/
+jenkins_compose/
+mysql_data/
+frontend/
 
 # jest-html-reporters-attach
 jest-html-reporters-attach/

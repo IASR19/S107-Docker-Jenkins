@@ -5,8 +5,10 @@ USER root
 # Copiar arquivos de configuração do Jenkins
 COPY ./jenkins_compose/jenkins_configuration /var/jenkins_home
 
+RUN apt-get update && apt-get upgrade -y
+
 # Instalar o MySQL
-RUN apt-get update && apt-get install -y mysql-client
+RUN apt-get update && apt-get install -y default-mysql-client
 
 # Copiar arquivos de configuração do MySQL
 COPY ./mysql_data /var/lib/mysql

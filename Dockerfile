@@ -1,5 +1,7 @@
 FROM igsr19/s107-pv2:v1.0
 
+USER root
+
 # Copiar arquivos de configuração do Jenkins
 COPY ./jenkins_compose/jenkins_configuration /var/jenkins_home
 
@@ -23,3 +25,5 @@ EXPOSE 80
 
 # Comando de inicialização
 CMD ["/bin/bash"]
+
+USER jenkins

@@ -1,4 +1,4 @@
-> Juntamente da imagem v1.o, foi adicionado +2 imagens criando o seguinte ambiente: Vamos supuer que queremos adicionar um serviço de banco de dados MySQL e um serviço de frontend React.js.
+> Juntamente da imagem v1.o, foi adicionado +2 imagens criando o seguinte ambiente: Vamos supor que queremos adicionar um serviço de banco de dados MySQL e um serviço de frontend React.js.
 #### mysql usa a imagem oficial do MySQL e o serviço frontend usa a imagem oficial do Nginx.
 
 
